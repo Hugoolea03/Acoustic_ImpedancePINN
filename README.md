@@ -24,3 +24,31 @@ Install required packages with:
 ```bash
 pip install torch torchvision torchaudio
 pip install numpy scipy matplotlib tqdm scikit-learn
+
+# Include the Markdown table and command example (as seen in the screenshot) into the README
+full_readme_with_table = full_readme + """
+
+---
+
+## 📋 Optional Arguments Table
+
+### Optional Arguments (via config in `PINN_MAIN_OPTIMIZADO.py`)
+
+| Argument                  | Type      | Default | Description                      |
+|--------------------------|-----------|---------|----------------------------------|
+| `--data_path`            | `str`     | `None`  | Path to LAS files                |
+| `--results_dir`          | `str`     | `None`  | Output directory                 |
+| `--num_wells`            | `int` or `all` | `all` | Number of wells used            |
+| `--freq`                 | `int`     | `30`    | Ricker wavelet frequency         |
+| `--length`               | `float`   | `0.512` | Wavelet duration                 |
+| `--dt`                   | `float`   | `0.002` | Time sampling interval           |
+| `--snr_db`               | `float`   | `25`    | Signal-to-noise ratio            |
+| `--window_size`          | `int`     | `48`    | Input window size                |
+| `--epochs`               | `int`     | `60`    | Training epochs                  |
+| `--k_folds`              | `int`     | `3`     | Cross-validation folds           |
+| `--num_models_ensemble`  | `int`     | `3`     | Models in ensemble               |
+
+### Example:
+
+```bash
+python PINN_MAIN_OPTIMIZADO.py --num_wells 5 --freq 40 --snr_db 20
