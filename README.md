@@ -1,2 +1,26 @@
-# Acoustic_ImpedancePINN
-This repository implements a Physics-Informed Neural Network (PINN) designed for high-fidelity inversion of acoustic impedance from seismic data. The codebase is highly optimized for GPU acceleration, multi-scale modeling, adaptive physical loss, and homogeneous zone handling, using PyTorch.
+readme_content = """
+# 🧠 Physics-Informed Neural Network for Acoustic Impedance Inversion
+
+This repository implements a Physics-Informed Neural Network (PINN) designed for high-fidelity inversion of acoustic impedance from seismic data. The codebase is highly optimized for **GPU acceleration**, **multi-scale modeling**, **adaptive physical loss**, and **homogeneous zone handling**, using **PyTorch**.
+
+---
+
+## 📁 Project Structure
+
+- **`PINN_MAIN_OPTIMIZADO.py`**: Main entry point; integrates all modules and manages full pipeline.
+- **`PINN_1A_OPTIMIZADO.py`**: Signal processing utilities (wavelets, noise, convolution, Hann window).
+- **`PINN_1B_OPTIMIZADO.py`**: Neural network architecture with multi-scale input and residual blocks.
+- **`PINN_1C_OPTIMIZADO.py`**: Wrapper with physics loss and normalization strategies per well.
+- **`PINN_1D_OPTIMIZADO.py`**: Homogeneous zone detection, smoothing, and ensemble prediction.
+- **`PINN_TRAIN_OPTIMIZADO.py`**: Optimized training loop with AMP, early stopping, and learning schedulers.
+- **`PINN_EVAL_OPTIMIZADO.py`**: Evaluation pipeline with zone-specific metrics and layer detection.
+
+---
+
+## 🛠️ Dependencies
+
+Install required packages with:
+
+```bash
+pip install torch torchvision torchaudio
+pip install numpy scipy matplotlib tqdm scikit-learn
